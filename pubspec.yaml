@@ -15,7 +15,6 @@ dependencies:
   dio: ^4.0.0
   json_annotation: ^4.0.1
   fluttertoast: ^8.0.5
-  i18n_extension: ^4.0.3
   animations: ^2.0.0
   shared_preferences: ^2.0.5
   font_awesome_flutter: ^9.0.0

@@ -1,6 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:riding_app/app/home/home.module.dart';
-import 'package:riding_app/app/login/login.view.dart';
 import 'package:riding_app/app/splash-screen/splash-screen.view.dart';
 
 class AppModule extends Module {
@@ -17,6 +16,5 @@ class AppModule extends Module {
   final List<ModularRoute> routes = [
     ModuleRoute('/home', module: HomeModule(), transition: TransitionType.rightToLeftWithFade),
     ChildRoute(splashScreen, child: (context, args) => SplashScreen()),
-    ChildRoute(login, child: (context, args) => Login(), transition: TransitionType.downToUp),
   ];
 }
