@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:riding_app/app/home/navbar.view.dart';
 import 'package:riding_app/config/config_screen.dart';
 import 'package:riding_app/themes/style.dart';
 
@@ -18,11 +18,14 @@ class _HomeWidgetState extends State<HomeWidget> {
       body: buildBody(),
       // backgroundColor: Color(0xFFD2F2FF),
       // drawer: buildDrawer(),
-      // appBar: buildAppBar(),
+      appBar: buildAppBar(),
+      bottomNavigationBar: CustomNavBar(),
     );
   }
 
-  AppBar buildAppBar() => AppBar();
+  AppBar buildAppBar() => AppBar(
+        title: Text('Trang chủ'),
+      );
 
   Widget buildDrawer() => SizedBox(
         width: SizeConfig.safeBlockHorizontal * 45,
