@@ -4,6 +4,8 @@ import 'package:flutter/painting.dart';
 import 'package:riding_app/config/config_screen.dart';
 import 'package:riding_app/themes/style.dart';
 
+import 'component/home_body.component.dart';
+
 class HomeWidget extends StatefulWidget {
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
@@ -14,9 +16,9 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: buildBody(),
-      backgroundColor: Color(0xFFD2F2FF),
-      drawer: buildDrawer(),
-      appBar: buildAppBar(),
+      // backgroundColor: Color(0xFFD2F2FF),
+      // drawer: buildDrawer(),
+      // appBar: buildAppBar(),
     );
   }
 
@@ -38,7 +40,12 @@ class _HomeWidgetState extends State<HomeWidget> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CircleAvatar(child: Container(), backgroundColor: Colors.white, radius: 30),
+                        CircleAvatar(
+                            child: Container(
+                              child: Image.network('https://picsum.photos/250?image=9'),
+                            ),
+                            backgroundColor: Colors.white,
+                            radius: 30),
                         SizedBox(height: SizeConfig.safeBlockVertical),
                         Text("Tran Thu Trang", style: TextStyle(color: AppColor.white, fontSize: 13))
                       ],
@@ -61,5 +68,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         ),
       );
 
-  Widget buildBody() => Container();
+  Widget buildBody() => Container(
+        child: Body(),
+      );
 }
