@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../themes/style.dart';
+
 PreferredSizeWidget staticAppbar(
         {double? height,
         Widget? title,
@@ -12,7 +14,7 @@ PreferredSizeWidget staticAppbar(
         bool? centerTitle}) =>
     AppBar(
       toolbarHeight: height,
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.amber,
       title: title,
       centerTitle: centerTitle,
       actions: actions,
@@ -20,11 +22,7 @@ PreferredSizeWidget staticAppbar(
       leading: leading,
       bottom: bottomWidget,
       titleSpacing: titleSpacing ?? NavigationToolbar.kMiddleSpacing,
-      flexibleSpace: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(begin: Alignment.centerLeft, end: Alignment.centerRight, colors: [Color(0xFF00B59C), Color(0xFF056F83)]),
-        ),
-      ),
+      elevation: 0,
     );
 
 class BackButtonWidget extends StatelessWidget {

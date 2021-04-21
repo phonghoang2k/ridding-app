@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+
+import '../../app.module.dart';
+import '../home.module.dart';
 
 class Categories extends StatelessWidget {
   @override
@@ -19,7 +23,7 @@ class Categories extends StatelessWidget {
           (index) => CategoryCard(
             icon: categories[index]["icon"].toString(),
             text: categories[index]["text"].toString(),
-            press: () {},
+            press: () => Modular.to.pushNamed(AppModule.home + HomeModule.booking),
           ),
         ),
       ),
@@ -28,11 +32,7 @@ class Categories extends StatelessWidget {
 }
 
 class CategoryCard extends StatelessWidget {
-  const CategoryCard({
-    required this.icon,
-    required this.text,
-    required this.press,
-  }) : super();
+  const CategoryCard({required this.icon, required this.text, required this.press}) : super();
 
   final String icon, text;
   final GestureTapCallback press;
@@ -48,15 +48,7 @@ class CategoryCard extends StatelessWidget {
             Container(
               height: 55,
               width: 55,
-              // decoration: BoxDecoration(
-              //   color: Color(0xFFFFECDF),
-              //   borderRadius: BorderRadius.circular(10),
-              // ),
-              child: Image.asset(
-                icon,
-                width: 150,
-                height: 150,
-              ),
+              child: Image.asset(icon, width: 150, height: 150),
             ),
             SizedBox(height: 5),
             Text(text, textAlign: TextAlign.center)
